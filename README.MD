@@ -58,11 +58,9 @@
 - 100500
 ### Результаты обработки
 #### files/integers.txt:
-- txt
 - 45
 - 100500
 #### files/floats.txt:
-- txt
 - 3.1415
 - -0.001
 #### files/strings.txt:
