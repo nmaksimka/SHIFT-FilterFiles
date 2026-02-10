@@ -120,8 +120,8 @@
 ## ⚙️ Использование
 ```bash
 #Скачай проект
-git clone <репозиторий>
-# Компилируем из корня, но указываем правильный sourcepath
+git clone https://github.com/nmaksimka/SHIFT-FilterFiles.git
+
 cd src/main/java
 javac -d ../../../out -encoding UTF-8 Main.java cli/*.java core/*.java io/*.java utils/*.java
 cd ../../..
