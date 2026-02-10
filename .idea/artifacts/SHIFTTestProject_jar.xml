@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SHIFTTestProject:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SHIFTTestProject_jar</output-path>
+    <root id="archive" name="SHIFTTestProject.jar">
+      <element id="module-output" name="SHIFTTestProject" />
+    </root>
+  </artifact>
+</component>

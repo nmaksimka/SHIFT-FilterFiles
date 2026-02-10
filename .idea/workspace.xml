@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="SHIFTTestProject:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="da802e54-d574-41e0-8541-9ffd41d8a48b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SHIFTTestProject_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SHIFTTestProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/floats.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/integers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/files/strings.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/files/input1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/files/input2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FilterFiles.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/FilterFiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cli/ArgumentParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cli/CommandLineOptions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/DataClassifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/DataStatistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/DataType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/FileProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/FileWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utils/NumberValidator.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="39KwiPNIR7IyuY3maPL8JcUevZN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.FilterFiles.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.Main2.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2024.2.3/projects/SHIFTTestProject/main/src/java/Main.java",
+    "onboarding.tips.debug.path": "C:/Program Files/JetBrains/IntelliJ IDEA Community Edition 2024.2.3/projects/SHIFTTestProject/src/Main.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\projects\SHIFTProject\src\main\files" />
+      <recent name="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2024.2.3\projects\SHIFTTestProject" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="FilterFiles" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.FilterFiles" />
+      <module name="SHIFTTestProject" />
+      <option name="PROGRAM_PARAMETERS" value="-s -p sample_ src/main/files/input1.txt src/main/files/input2.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.Main" />
+      <module name="SHIFTTestProject" />
+      <option name="PROGRAM_PARAMETERS" value="-f -p result_ -o src/main/popopopopopo src/main/files/input1.txt src/main/files/input2.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main2" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.Main" />
+      <module name="SHIFTTestProject" />
+      <option name="PROGRAM_PARAMETERS" value="-s -a -p sample_ src\main\files\input1.txt src\main\files\input2.txt src\main\files\input3.txt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main2" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main2" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="da802e54-d574-41e0-8541-9ffd41d8a48b" name="Changes" comment="" />
+      <created>1770458197342</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770458197342</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.bat" />
+  </component>
+</project>
