@@ -1,4 +1,4 @@
-package main.java.cli;
+package io.github.nmaksimka.filterfiles.cli;
 
 public class CommandLineOptions {
     private boolean appendMode = false;

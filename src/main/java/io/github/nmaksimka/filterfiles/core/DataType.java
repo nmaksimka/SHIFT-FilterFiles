@@ -1,4 +1,4 @@
-package main.java.core;
+package io.github.nmaksimka.filterfiles.core;
 
 public enum DataType {
     INTEGER("целое число"),

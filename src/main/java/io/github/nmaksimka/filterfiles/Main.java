@@ -1,10 +1,10 @@
-package main.java;
+package io.github.nmaksimka.filterfiles;
 
-import main.java.cli.ArgumentParser;
-import main.java.cli.CommandLineOptions;
-import main.java.core.DataStatistics;
-import main.java.io.FileProcessor;
-import main.java.io.FileWriter;
+import io.github.nmaksimka.filterfiles.cli.ArgumentParser;
+import io.github.nmaksimka.filterfiles.cli.CommandLineOptions;
+import io.github.nmaksimka.filterfiles.core.DataStatistics;
+import io.github.nmaksimka.filterfiles.files.FileProcessor;
+import io.github.nmaksimka.filterfiles.files.FileWriter;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;

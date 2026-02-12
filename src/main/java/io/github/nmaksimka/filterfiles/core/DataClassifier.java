@@ -1,6 +1,6 @@
-package main.java.core;
+package io.github.nmaksimka.filterfiles.core;
 
-import main.java.utils.NumberValidator;
+import io.github.nmaksimka.filterfiles.utils.NumberValidator;
 
 public class DataClassifier {
     private final DataStatistics statistics;
