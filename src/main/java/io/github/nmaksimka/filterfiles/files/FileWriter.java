@@ -1,4 +1,4 @@
-package main.java.io;
+package io.github.nmaksimka.filterfiles.files;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;

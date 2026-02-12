@@ -1,4 +1,4 @@
-package main.java.cli;
+package io.github.nmaksimka.filterfiles.cli;
 
 import java.util.ArrayList;
 import java.util.List;

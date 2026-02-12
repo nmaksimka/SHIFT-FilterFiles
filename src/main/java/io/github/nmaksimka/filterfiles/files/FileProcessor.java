@@ -1,6 +1,6 @@
-package main.java.io;
+package io.github.nmaksimka.filterfiles.files;
 
-import main.java.core.DataClassifier;
+import io.github.nmaksimka.filterfiles.core.DataClassifier;
 
 import java.io.BufferedReader;
 import java.io.IOException;

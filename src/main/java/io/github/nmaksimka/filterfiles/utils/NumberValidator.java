@@ -1,6 +1,6 @@
-package main.java.utils;
+package io.github.nmaksimka.filterfiles.utils;
 
-import main.java.core.DataType;
+import io.github.nmaksimka.filterfiles.core.DataType;
 
 import java.util.regex.Pattern;
 

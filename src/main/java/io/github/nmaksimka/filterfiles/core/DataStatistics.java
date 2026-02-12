@@ -1,4 +1,4 @@
-package main.java.core;
+package io.github.nmaksimka.filterfiles.core;
 
 import java.util.ArrayList;
 import java.util.List;
