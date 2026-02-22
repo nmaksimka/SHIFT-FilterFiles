@@ -105,14 +105,6 @@ public final class ResultWriter implements Closeable {
         if (failed.add(type)) {
             err.println("Не удалось записать " + prefix + type.fileName() + ": " + describe(e));
         }
-        var writer = writers.remove(type);
-        if (writer != null) {
-            try {
-                writer.close();
-            } catch (IOException closeError) {
-                e.addSuppressed(closeError);
-            }
-        }
     }
 
     static String describe(IOException e) {
