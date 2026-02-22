@@ -1,96 +1,87 @@
 package io.github.nmaksimka.filterfiles.cli;
 
+import java.nio.file.InvalidPathException;
+import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
-public class ArgumentParser {
-    private final CommandLineOptions options = new CommandLineOptions();
-    private final List<String> inputFiles = new ArrayList<>();
+public final class ArgumentParser {
 
-    public void parse(String[] args) throws IllegalArgumentException {
-        for (int i = 0; i < args.length; i++) {
-            String arg = args[i];
+    public static final String USAGE = """
+            Использование: java -jar filterfiles.jar [опции] файл...
 
+            Опции:
+              -o <путь>      папка для результатов (по умолчанию текущая)
+              -p <префикс>   префикс имён выходных файлов, например result_
+              -a             дописывать в существующие файлы вместо перезаписи
+              -s             краткая статистика: количество элементов
+              -f             полная статистика: минимум, максимум, сумма, среднее, длины строк
+              -h, --help     показать эту справку
+              --             всё дальше считать именами файлов
+
+            Результаты: [префикс]integers.txt, [префикс]floats.txt, [префикс]strings.txt.
+            Файл создаётся, только если для него есть данные.
+            """;
+
+    private static final Set<String> KNOWN_OPTIONS = Set.of("-o", "-p", "-a", "-s", "-f", "-h", "--help", "--");
+
+    private ArgumentParser() {
+    }
+
+    public static Options parse(String... args) throws UsageException {
+        var outputDir = Path.of("");
+        var prefix = "";
+        var append = false;
+        var statistics = StatisticsMode.NONE;
+        var inputs = new ArrayList<Path>();
+        var onlyFiles = false;
+
+        for (var i = 0; i < args.length; i++) {
+            var arg = args[i];
+            if (onlyFiles || !arg.startsWith("-")) {
+                inputs.add(path(arg));
+                continue;
+            }
             switch (arg) {
-                case "-a":
-                    options.setAppendMode(true);
-                    break;
-
-                case "-s":
-                    options.setFullStatistics(false);
-                    break;
-
-                case "-f":
-                    options.setFullStatistics(true);
-                    break;
-
-                case "-o":
-                    if (i + 1 >= args.length) {
-                        throw new IllegalArgumentException("Опция -o требует указания пути");
-                    }
-                    options.setOutputPath(args[++i]);
-                    break;
-
-                case "-p":
-                    if (i + 1 >= args.length) {
-                        throw new IllegalArgumentException("Опция -p требует указания префикса");
-                    }
-                    options.setFilePrefix(args[++i]);
-                    break;
-
-                case "-h":
-                    printHelp();
-                    System.exit(0);
-                    break;
-
-                default:
-                    if (arg.startsWith("-")) {
-                        throw new IllegalArgumentException("Неизвестная опция: " + arg);
-                    } else {
-                        inputFiles.add(arg);
-                    }
-                    break;
+                case "--" -> onlyFiles = true;
+                case "-h", "--help" -> {
+                    return Options.helpRequested();
+                }
+                case "-a" -> append = true;
+                case "-s" -> statistics = statistics == StatisticsMode.FULL ? StatisticsMode.FULL : StatisticsMode.SHORT;
+                case "-f" -> statistics = StatisticsMode.FULL;
+                case "-o" -> outputDir = path(value(args, ++i, arg));
+                case "-p" -> prefix = prefix(value(args, ++i, arg));
+                default -> throw new UsageException("Неизвестная опция: " + arg);
             }
         }
 
-        if (inputFiles.isEmpty()) {
-            throw new IllegalArgumentException("Не указаны входные файлы");
+        if (inputs.isEmpty()) {
+            throw new UsageException("Не указаны входные файлы");
         }
+        return new Options(outputDir, prefix, append, statistics, inputs, false);
     }
 
-    public CommandLineOptions getOptions() {
-        return options;
+    private static String value(String[] args, int index, String option) throws UsageException {
+        if (index >= args.length || KNOWN_OPTIONS.contains(args[index]) || args[index].isBlank()) {
+            throw new UsageException("После " + option + " нужно указать значение");
+        }
+        return args[index];
     }
 
-    public List<String> getInputFiles() {
-        return inputFiles;
+    private static String prefix(String value) throws UsageException {
+        if (value.contains("/") || value.contains("\\") || value.contains("..")) {
+            throw new UsageException("Префикс не может содержать разделители пути: " + value);
+        }
+        path(value + "integers.txt");
+        return value;
     }
 
-    public static void printHelp() {
-        System.out.println("FilterFiles - утилита для фильтрации содержимого файлов");
-        System.out.println("Использование: java FilterFiles [опции] файлы...");
-        System.out.println();
-        System.out.println("Опции:");
-        System.out.println("  -a             Добавлять в конец существующих файлов (по умолчанию: перезапись)");
-        System.out.println("  -s             Краткая статистика (по умолчанию)");
-        System.out.println("  -f             Полная статистика");
-        System.out.println("  -o <путь>      Путь для выходных файлов (по умолчанию: текущая директория)");
-        System.out.println("  -p <префикс>   Префикс имен выходных файлов");
-        System.out.println("  -h             Показать эту справку");
-        System.out.println();
-        System.out.println("Примеры:");
-        System.out.println("  java FilterFiles -s file1.txt file2.txt");
-        System.out.println("  java FilterFiles -o output -p result_ -f data.txt");
-        System.out.println("  java FilterFiles -a -p data_ file.txt");
-        System.out.println();
-        System.out.println("Файлы результатов:");
-        System.out.println("  [префикс]integers.txt - целые числа");
-        System.out.println("  [префикс]floats.txt   - числа с плавающей точкой");
-        System.out.println("  [префикс]strings.txt  - строки");
-    }
-
-    public static void printUsage() {
-        System.out.println("Использование: java FilterFiles [опции] файлы...");
-        System.out.println("Для получения справки используйте: java FilterFiles -h");
+    private static Path path(String value) throws UsageException {
+        try {
+            return Path.of(value);
+        } catch (InvalidPathException e) {
+            throw new UsageException("Некорректный путь: " + value);
+        }
     }
 }
